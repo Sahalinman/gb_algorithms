@@ -1,7 +1,8 @@
-package lesson2.homework;
+package lesson2.homework.generator;
 
-import java.util.ArrayList;
-import java.util.List;
+import lesson2.homework.Notebook;
+import lesson2.homework.constants.Company;
+
 import java.util.Random;
 
 public class NotebookGenerator {
@@ -16,19 +17,17 @@ public class NotebookGenerator {
     private static final int minRamValue = 4;
     private static final int ramStep = 4;
 
-    public static List<Notebook> generate(int count) {
+    public static Notebook[] generate(int count) {
 
-        List<Notebook> notebookList = new ArrayList<>();
+        Notebook[] notebookList = new Notebook[count];
         for (int i = 0; i < count; i++) {
-            notebookList.add(
-                    new Notebook(
+            notebookList[i] = new Notebook(
                             // Генерируем имя
-                            CompanyName.getCompanyNameByPriority(random.nextInt(5) + 1),
+                            Company.getCompanyNameByPriority(random.nextInt(5) + 1),
                             // Генерируем цену
                             (int) Math.round(Math.random() * ((maxNotebookPrice - minNotebookPrice) / priceStep)) * priceStep + minNotebookPrice,
                             // Генерируем кол-во оперативной памяти
                             (int) Math.round(Math.random() * ((maxRamValue - minRamValue) / ramStep)) * ramStep + minRamValue
-                    )
             );
         }
         return notebookList;

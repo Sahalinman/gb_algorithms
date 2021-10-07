@@ -1,5 +1,7 @@
 package lesson2.homework;
 
+import lesson2.homework.constants.Company;
+
 public class Notebook {
 
     private int price;
@@ -36,9 +38,13 @@ public class Notebook {
         this.companyName = companyName;
     }
 
+    public int getPriority() {
+        return Company.getPriorityByCompanyName(this.companyName);
+    }
+
     @Override
     public String toString() {
-        return this.companyName + " (Priority " + CompanyName.getPriorityByCompanyName(this.companyName) + ") : "
+        return this.companyName + " (Priority " + Company.getPriorityByCompanyName(this.companyName) + ") : "
                 + this.price + " : " + ram;
     }
 }

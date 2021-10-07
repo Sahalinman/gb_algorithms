@@ -1,6 +1,6 @@
-package lesson2.homework;
+package lesson2.homework.constants;
 
-public enum CompanyName {
+public enum Company {
 
     LENUVO("Lenuvo", 1),
     ASOS("Asos", 2),
@@ -8,10 +8,12 @@ public enum CompanyName {
     ESER("Eser", 4),
     XAMIOU("Xamiou", 5);
 
+    // Название компании
     private String companyName;
+    // Пусть это будет популярность компании, её приоритет в сортировке
     private Integer priority;
 
-    CompanyName(String companyName, int priority) {
+    Company(String companyName, int priority) {
         this.companyName = companyName;
         this.priority = priority;
     }
@@ -25,7 +27,7 @@ public enum CompanyName {
     }
 
     public static String getCompanyNameByPriority(int priority) {
-        for (CompanyName name : CompanyName.values()) {
+        for (Company name : Company.values()) {
             if (name.getPriority() == priority) {
                 return name.getCompanyName();
             }
@@ -34,7 +36,7 @@ public enum CompanyName {
     }
 
     public static Integer getPriorityByCompanyName(String companyName) {
-        for (CompanyName name : CompanyName.values()) {
+        for (Company name : Company.values()) {
             if (name.getCompanyName().equals(companyName)) {
                 return name.getPriority();
             }
