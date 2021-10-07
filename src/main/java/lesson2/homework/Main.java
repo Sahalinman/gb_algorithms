@@ -9,7 +9,7 @@ public class Main {
 
     private static Long time;
     private static final Boolean debug = false;
-    private static final int notebookCount = 5000;
+    private static final int notebookCount = 10000;
 
     public static void main(String[] args) {
 
