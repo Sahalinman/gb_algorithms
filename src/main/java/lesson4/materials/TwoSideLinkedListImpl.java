@@ -71,4 +71,14 @@ public class TwoSideLinkedListImpl<E> extends SimpleLinkedListImpl<E> implements
     public E getLast() {
         return last.item;
     }
+
+    protected void insertLastNode(Node<E> newNode) {
+        if (isEmpty()) {
+            first = newNode;
+        } else {
+            last.next = newNode;
+        }
+        last = newNode;
+        size++;
+    }
 }
