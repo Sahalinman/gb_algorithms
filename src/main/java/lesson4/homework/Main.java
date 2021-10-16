@@ -6,6 +6,8 @@ import lesson4.materials.LinkedDeque;
 import lesson4.materials.LinkedQueue;
 import lesson4.materials.SimpleLinkedListImpl;
 
+import java.util.Iterator;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,7 +18,7 @@ public class Main {
 
     private static void testLinkedList() {
 
-        var linkedList = new SimpleLinkedListImpl<>();
+        var linkedList = new SimpleLinkedListImpl<Integer>();
 
         linkedList.insertFirst(1);
         linkedList.insertFirst(2);
@@ -39,14 +41,14 @@ public class Main {
 
         linkedList.display();
 
-//        Iterator<Integer> iterator = linkedList.iterator();
-//        while (iterator.hasNext()) {
-//            System.out.println(iterator.next());
-//        }
-//
-//        for (Integer value : linkedList) {
-//            System.out.println("value: " + value);
-//        }
+        Iterator<Integer> iterator = linkedList.iterator();
+        while (iterator.hasNext()) {
+            System.out.println("Вывод через iterator : " + iterator.next());
+        }
+
+        for (Integer value : linkedList) {
+            System.out.println("Вывод через for : " + value);
+        }
     }
 
     private static void testQueue() {
