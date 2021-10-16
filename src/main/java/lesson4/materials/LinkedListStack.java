@@ -1,5 +1,6 @@
 package lesson4.materials;
 
+
 import lesson3.materials.stack.Stack;
 
 public class LinkedListStack<E> implements Stack<E> {

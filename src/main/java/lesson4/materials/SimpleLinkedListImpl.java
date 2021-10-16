@@ -1,6 +1,7 @@
 package lesson4.materials;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
 
@@ -114,21 +115,26 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
 
     private class LinkedListIterator implements Iterator<E> {
 
+        private Node<E> current = first;
+
         @Override
         public boolean hasNext() {
-            return false;
+            return current != null;
         }
 
         @Override
         public E next() {
-            return null;
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            E item = current.item;
+            current = current.next;
+            return item;
         }
 
         @Override
         public void remove() {
             Iterator.super.remove();
         }
-
-
     }
 }

@@ -19,9 +19,12 @@ public interface LinkedList<E>  {
     E getFirst();
 
     class Node<E> {
+
         E item;
         Node<E> next;
         Node<E> prev;
+
+        public Node() {}
 
         public Node(E item, Node<E> next) {
             this.item = item;
