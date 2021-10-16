@@ -41,11 +41,13 @@ public class Main {
 
         linkedList.display();
 
+        // Вывод через iterator
         Iterator<Integer> iterator = linkedList.iterator();
         while (iterator.hasNext()) {
             System.out.println("Вывод через iterator : " + iterator.next());
         }
 
+        // Вывод через for
         for (Integer value : linkedList) {
             System.out.println("Вывод через for : " + value);
         }
