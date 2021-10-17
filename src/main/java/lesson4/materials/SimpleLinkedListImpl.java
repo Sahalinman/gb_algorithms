@@ -126,7 +126,7 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
         @Override
         public E next() {
             if (!hasNext()) {
-                throw new NoSuchElementException();
+                throw new NoSuchElementException("LinkedList пуст!");
             }
             E item = current.item;
             current = current.next;
@@ -135,7 +135,7 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
 
         @Override
         public void remove() {
-            Iterator.super.remove();
+            throw new NoSuchElementException("Метод не реализован!");
         }
     }
 }
