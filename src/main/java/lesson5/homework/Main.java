@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Задание №1
+
         System.out.println(recursiveDegree(2, 4)); // 16
         System.out.println(recursiveDegree(2, 9)); // 512
 
@@ -22,7 +23,7 @@ public class Main {
         stuffs.add(new Stuff("Настенные часы", 3.1,300));
 
         Backpack backpack = new Backpack(5);
-        backpack.processing(stuffs);
+        backpack.getBestStaff(stuffs);
 
         System.out.println(backpack.getBestStuff());
 

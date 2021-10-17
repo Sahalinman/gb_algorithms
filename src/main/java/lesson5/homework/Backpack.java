@@ -38,7 +38,7 @@ public class Backpack {
         return result;
     }
 
-    private void checkList(List<Stuff> stuffs) {
+    private void checkWeightsAndPrices(List<Stuff> stuffs) {
         if (this.bestStuff == null) {
             if (this.calcWeightSum(stuffs) <= this.capacity) {
                 this.bestStuff = stuffs;
@@ -52,13 +52,13 @@ public class Backpack {
         }
     }
 
-    public void processing(List<Stuff> stuffs) {
+    public void getBestStaff(List<Stuff> stuffs) {
         if (stuffs.size() > 0) {
-            this.checkList(stuffs);
+            this.checkWeightsAndPrices(stuffs);
             for (int i = 0; i < stuffs.size(); i++) {
                 List<Stuff> combination = new ArrayList<>(stuffs);
                 combination.remove(i);
-                processing(combination);
+                getBestStaff(combination);
             }
         }
     }
