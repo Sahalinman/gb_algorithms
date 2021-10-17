@@ -26,7 +26,8 @@ public class Main {
         backpack.getBestStaff(stuffs);
 
         System.out.println(backpack.getBestStuff());
-
+        // Вывод: [Смартфон {ВЕС = 0.2, ЦЕНА = 350}, Ноутбук {ВЕС = 3.5, ЦЕНА = 1750},
+        // Драгоценности {ВЕС = 1.1, ЦЕНА = 750}, Наручные часы {ВЕС = 0.1, ЦЕНА = 600}]
     }
 
     /**
