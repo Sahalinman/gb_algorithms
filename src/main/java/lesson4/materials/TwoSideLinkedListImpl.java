@@ -5,11 +5,12 @@ public class TwoSideLinkedListImpl<E> extends SimpleLinkedListImpl<E> implements
     protected Node<E> last;
 
     @Override
-    public void insertFirst(E value) {
+    public boolean insertFirst(E value) {
         super.insertFirst(value);
         if (size == 1) {
             last = first;
         }
+        return false;
     }
 
     @Override
@@ -70,15 +71,5 @@ public class TwoSideLinkedListImpl<E> extends SimpleLinkedListImpl<E> implements
     @Override
     public E getLast() {
         return last.item;
-    }
-
-    protected void insertLastNode(Node<E> newNode) {
-        if (isEmpty()) {
-            first = newNode;
-        } else {
-            last.next = newNode;
-        }
-        last = newNode;
-        size++;
     }
 }

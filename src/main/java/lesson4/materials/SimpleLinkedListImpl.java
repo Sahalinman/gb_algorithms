@@ -1,6 +1,7 @@
 package lesson4.materials;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
 
@@ -8,9 +9,10 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
     protected int size;
 
     @Override
-    public void insertFirst(E value) {
+    public boolean insertFirst(E value) {
         first = new Node<>(value, first);
         size++;
+        return false;
     }
 
     @Override
@@ -114,21 +116,26 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E>, Iterable<E> {
 
     private class LinkedListIterator implements Iterator<E> {
 
+        private Node<E> current = first;
+
         @Override
         public boolean hasNext() {
-            return false;
+            return current != null;
         }
 
         @Override
         public E next() {
-            return null;
+            if (!hasNext()) {
+                throw new NoSuchElementException("LinkedList пуст!");
+            }
+            E item = current.item;
+            current = current.next;
+            return item;
         }
 
         @Override
         public void remove() {
-            Iterator.super.remove();
+            throw new NoSuchElementException("Метод не реализован!");
         }
-
-
     }
 }

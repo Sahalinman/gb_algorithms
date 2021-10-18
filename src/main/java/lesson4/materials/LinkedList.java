@@ -2,7 +2,7 @@ package lesson4.materials;
 
 public interface LinkedList<E>  {
 
-    void insertFirst(E value);
+    boolean insertFirst(E value);
 
     E removeFirst();
 
@@ -19,6 +19,7 @@ public interface LinkedList<E>  {
     E getFirst();
 
     class Node<E> {
+
         E item;
         Node<E> next;
         Node<E> prev;
