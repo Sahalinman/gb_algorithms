@@ -1,8 +1,6 @@
 package lesson4.materials.finalMaterials;
 
-import lesson3.queue.Queue;
-import lesson4.TwoSideLinkedList;
-import lesson4.TwoSideLinkedListImpl;
+import lesson3.materials.queue.Queue;
 
 public class LinkedQueue<E> implements Queue<E> {
     private final TwoSideLinkedList<E> data;
