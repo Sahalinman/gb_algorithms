@@ -1,8 +1,12 @@
 package lesson7.materials;
 
+import lombok.Data;
+
 import java.util.Objects;
 
+@Data
 public class Vertex {
+
     private final String label;
     private boolean isVisited;
 
