@@ -1,14 +1,16 @@
 package lesson7.materials;
 
 public class Main {
+
     public static void main(String[] args) {
 //        testGraph();
         testDfs();
-        testBfs();
+//        testBfs();
     }
 
     private static void testGraph() {
-        Graph graph = new GraphImpl(4);
+
+        Graph graph = new GraphImpl(4, false);
         graph.addVertex("A");
         graph.addVertex("B");
         graph.addVertex("C");
@@ -24,7 +26,7 @@ public class Main {
     }
 
     private static void testDfs() {
-        Graph graph = new GraphImpl(7);
+        Graph graph = new GraphImpl(7, false);
         graph.addVertex("A");
         graph.addVertex("B");
         graph.addVertex("C");
@@ -42,7 +44,7 @@ public class Main {
     }
 
     private static void testBfs() {
-        Graph graph = new GraphImpl(8);
+        Graph graph = new GraphImpl(8, false);
         graph.addVertex("A");
         graph.addVertex("B");
         graph.addVertex("C");
